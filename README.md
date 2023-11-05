@@ -1,52 +1,26 @@
-# web_stack_template
-This repository contains a template for building common data-driven web applications from.
+# AIID Demos
+This repository contains demonstrations used for work with AIID.
+# Getting Started
+### Starting the server
+`cd backend`
+`python manage.py runserver`
 
-# Steps to recreate
-### 1. Setup `pipenv` and install `django`
-```pipenv install django```
+### Starting Jupyter Lab
+`cd backend`
+`python manage.py shell_plus --lab`
 
-### 2. Create Django Project
-```
-pipenv shell
-django-admin startproject <project_name> .
-```
+### Using django models in Jupyter
+`from <app name>.models import <model name>`
 
-### 3. Create `Pages` App
-```python manage.py startapp pages```
-
-### 4. "Install" `Pages` App in Project
-In `<project_name>/settings.py`, add:
-```
-INSTALLED_APPS = [
-    "pages.apps.PagesConfig",
-    ...
-]
-```
-
-### 5. Create a *View* for the *Pages* App
-In `pages/views.py`, add:
-```
-from django.shortcuts import render
-
-def home(request):
-    return render(request, "pages/home.html", {})
-```
-
-### 6. Create a `/templates` directory for *Pages* App
-```
-mkdir -p pages/templates/pages
-touch pages/templates/pages/home.html
-```
-
-In `pages/templates/pages/home.html`, add:
-```<h1>Hello, World!</h1>```
-
-### 7. Add a *Route* to the *Project*
-In `<project_name>/urls.py`, add:
-
-
+***NOTE: make sure that `DJANGO_ALLOW_ASYNC_UNSAFE=True` is set in the `.env` file***
 
 # Resources
-* [Real Python - Get Started with Django](https://realpython.com/get-started-with-django-1/)
+* ~~[Real Python - Get Started with Django](https://realpython.com/get-started-with-django-1/)~~
+    * Not too helpful when it comes to making the actual connection. 
+    * Use this instead: [(DEV.to) How to connect Django to React.js](https://dev.to/nagatodev/how-to-connect-django-to-reactjs-1a71)
 * [Django (Backend) + React (Frontend) Basic Tutorial](https://medium.com/@gazzaazhari/django-backend-react-frontend-basic-tutorial-6249af7964e4)
 * [React.dev - Add React To An Existing Project](https://react.dev/learn/add-react-to-an-existing-project)
+* [Getting Jupyter to work with Django](https://gist.github.com/EtsuNDmA/dd8949061783bf593706559374c8f635)
+* [How to structure React files](https://blog.webdevsimplified.com/2022-07/react-folder-structure/)]
+* [Full Stack with Django and React](https://medium.com/swlh/full-stack-with-django-and-react-react-afae36017852)
+    * Useful for setting up the data connections and hooks between React and Django

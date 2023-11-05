@@ -5,6 +5,17 @@ name = "pypi"
 
 [packages]
 django = "*"
+django-extensions = "*"
+jupyterlab = "*"
+python-dotenv = "*"
+jupyter = "*"
+ipython = "*"
+pymongo = "*"
+pandas = "*"
+django-pandas = "*"
+tqdm = "*"
+djangorestframework = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 
